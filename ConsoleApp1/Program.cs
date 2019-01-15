@@ -12,12 +12,19 @@ namespace ConsoleApp1
         {
             int userInput;
             int counter = 1;
+            int lowBound = 0;
+            int HighBound = 0;
 
-            Console.WriteLine("I am thinking of a number from 0 to 100.");
+            Console.WriteLine("What is the lower and upper bound you want to set");
+            Console.WriteLine("What is the lower bound you want to set?");
+            lowBound = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("What is the Higher bound you want to set?");
+            HighBound = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("I am thinking of a number from " + lowBound + " to " + HighBound + ".");
             Console.WriteLine("Take a guess at what the number is.");
 
             Random random = new Random();
-            int randomNum = random.Next(0, 100);
+            int randomNum = random.Next(lowBound, HighBound);
 
             userInput = Convert.ToInt32(Console.ReadLine());
             bool done = false;
